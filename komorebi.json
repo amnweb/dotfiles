@@ -5,8 +5,8 @@
 	"cross_monitor_move_behaviour": "Insert",
 	"default_workspace_padding": 4,
 	"default_container_padding": 4,
-    "focus_follows_mouse":"Komorebi",
-    "mouse_follows_focus": false,
+	"focus_follows_mouse": "Komorebi",
+	"mouse_follows_focus": false,
 	"transparency": true,
 	"transparency_alpha": 235,
 	"animation": {
@@ -84,7 +84,7 @@
 			"id": "OUTLOOK.EXE",
 			"matching_strategy": "Equals"
 		},
-        {
+		{
 			"kind": "Exe",
 			"id": "ApplicationFrameHost.exe",
 			"matching_strategy": "Equals"
