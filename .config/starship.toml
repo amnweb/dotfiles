@@ -1,0 +1,83 @@
+command_timeout = 10000
+add_newline = false
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = '▶▶ '
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+
+[hostname]
+ssh_only = true
+format = 'on [$hostname](bold yellow) '
+disabled = false
+
+
+[username]
+style_user = 'white bold'
+style_root = 'bright-red bold'
+format = '[$user]($style) '
+disabled = false
+show_always = false
+
+[directory]
+style = "bright-purple"
+truncation_length = 5
+truncation_symbol = '…/'
+read_only_style = 'bright-red'
+read_only = '  '
+home_symbol = '󰋜 ~'
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[character]
+success_symbol = "[❯](bright-purple)"
+error_symbol = "[❯](bright-cyan)"
+vimcmd_symbol = "[❯](bright-green)"
+
+[git_branch]
+symbol = ' '
+format = 'via [$symbol$branch]($style)'
+# truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold white'
+ 
+[git_commit]
+disabled = false
+format = '[\($hash$tag\)]($style) '
+style = 'bold red'
+tag_symbol = ' 󰜘 '
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bright-red'
+conflicted = ' 🏳 ' 
+up_to_date = ''
+untracked = ' [](bright-green) [$count](bright-green)'
+ahead = ' ${count}'
+diverged = ' ⇕${ahead_count}⇣${behind_count}'
+behind = ' ${count}'
+stashed = '  [$count](bright-red)'
+modified = '  [$count](bright-red)'
+staged = ' [++\($count\)](green)'
+renamed = ' [󰑕](bright-green) [$count](bright-green)'
+deleted = ' [](bright-blue) [$count](bright-blue)'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+symbol = '󰌠 '
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'

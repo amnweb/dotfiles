@@ -1,0 +1,11 @@
+[wsl2]
+guiApplications=false
+swap=0
+localhostforwarding=true
+nestedVirtualization=false
+debugConsole=false
+memory=24GB
+
+[experimental]
+sparseVhd=true
+autoMemoryReclaim=gradual
