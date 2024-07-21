@@ -12,7 +12,7 @@
 	"animation": {
 		"enabled": true,
 		"duration": 150,
-		"style": "Linear",
+		"style": "EaseInOutExpo",
 		"fps": 60
 	},
 	"border": false,
