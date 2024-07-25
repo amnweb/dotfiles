@@ -38,5 +38,14 @@
   "controlStyles[14].styles[0]": "Text=",
   "controlStyles[15].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
   "controlStyles[15].styles[0]": "Fill@ActiveRunningIndicator=#4cc2ff",
-  "controlStyles[15].styles[1]": "Width@ActiveRunningIndicator=20"
+  "controlStyles[15].styles[1]": "Width@ActiveRunningIndicator=20",
+  "controlStyles[16].target": "AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.TextBlock[2]",
+  "controlStyles[16].styles[0]": "Margin=0,0,0,0",
+  "controlStyles[16].styles[1]": "HorizontalAlignment=2",
+  "controlStyles[16].styles[2]": "Visibility=Collapsed",
+  "controlStyles[19].target": "AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.TextBlock[1]",
+  "controlStyles[19].styles[0]": "HorizontalAlignment=0",
+  "controlStyles[19].styles[1]": "Margin=0,2,0,0",
+  "controlStyles[17].target": "AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.Grid",
+  "controlStyles[17].styles[0]": "Margin=0,9,0,0"
 }
