@@ -1,0 +1,54 @@
+Windows 11 Taskbar Styler
+
+{
+  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].styles[0]": "Width=Auto",
+  "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
+  "controlStyles[0].styles[2]": "Margin=250,0,250,0",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].styles[0]": "Background:=#1e1e2e",
+  "controlStyles[1].styles[1]": "Padding=1",
+  "controlStyles[1].styles[2]": "CornerRadius=8",
+  "controlStyles[1].styles[3]": "Margin=0,1,0,3",
+  "controlStyles[1].styles[4]": "BorderThickness=1",
+  "controlStyles[1].styles[5]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
+  "controlStyles[2].target": "Rectangle#BackgroundFill",
+  "controlStyles[2].styles[0]": "Visibility=Collapsed",
+  "controlStyles[3].target": "Rectangle#BackgroundStroke",
+  "controlStyles[3].styles[0]": "Visibility=Collapsed",
+  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[4].styles[0]": "Margin=0",
+  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[5].styles[0]": "Background:=#1e1e2e",
+  "controlStyles[5].styles[1]": "Margin=8,1,8,3",
+  "controlStyles[5].styles[2]": "CornerRadius=8",
+  "controlStyles[5].styles[3]": "BorderThickness=1",
+  "controlStyles[5].styles[4]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
+  "controlStyles[5].styles[5]": "Padding=2,0,2,0",
+  "controlStyles[5].styles[6]": "Visibility=Collapsed",
+  "controlStyles[6].target": "SystemTray.ChevronIconView",
+  "controlStyles[6].styles[0]": "Padding=0",
+  "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
+  "controlStyles[7].styles[0]": "Padding=0",
+  "controlStyles[8].target": "SystemTray.OmniButton",
+  "controlStyles[8].styles[0]": "Padding=0",
+  "controlStyles[9].target": "SystemTray.CopilotIcon",
+  "controlStyles[9].styles[0]": "Padding=0",
+  "controlStyles[10].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
+  "controlStyles[10].styles[0]": "Padding=4,0,4,0",
+  "controlStyles[11].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
+  "controlStyles[11].styles[0]": "Padding=0",
+  "controlStyles[12].target": "SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
+  "controlStyles[12].styles[0]": "Padding=0",
+  "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
+  "controlStyles[13].styles[0]": "Margin=0,-4,-12,-4",
+  "controlStyles[14].target": "Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]",
+  "controlStyles[14].styles[0]": "Text="
+}
+
+
+
+
+Taskbar height and icon size
+
+{"IconSize":26,"TaskbarHeight":54,"TaskbarButtonWidth":44}
