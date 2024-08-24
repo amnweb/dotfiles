@@ -3,15 +3,15 @@
 	"app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
 	"window_hiding_behaviour": "Cloak",
 	"cross_monitor_move_behaviour": "Insert",
-	"default_workspace_padding": 4,
-	"default_container_padding": 4,
+	"default_workspace_padding": 3,
+	"default_container_padding": 3,
 	"focus_follows_mouse": "Komorebi",
 	"mouse_follows_focus": false,
-	"transparency": true,
-	"transparency_alpha": 235,
+	"transparency": false,
+	"transparency_alpha": 240,
 	"animation": {
 		"enabled": true,
-		"duration": 150,
+		"duration": 300,
 		"style": "EaseInOutExpo",
 		"fps": 60
 	},
@@ -20,15 +20,20 @@
 	"border_width": 0,
 	"border_offset": 0,
 	"border_colours": {
-		"single": "#42a5f5",
-		"stack": "#00a542",
-		"monocle": "#ff3399",
+		"single": "#89b4fa", //#89b4fa
+		"stack": "#a6e3a1",
+		"monocle": "#f38ba8",
 		"unfocused": "#2a3035"
 	},
 	"stackbar": {
 		"mode": "Never"
 	},
 	"float_rules": [
+		{
+			"kind": "Exe",
+			"id": "yasb.exe",
+			"matching_strategy": "Equals"
+		},
 		{
 			"kind": "Exe",
 			"id": "explorer.exe",
@@ -87,6 +92,11 @@
 		{
 			"kind": "Exe",
 			"id": "ApplicationFrameHost.exe",
+			"matching_strategy": "Equals"
+		},
+		{
+			"kind": "Exe",
+			"id": "vmware.exe",
 			"matching_strategy": "Equals"
 		}
 	],
