@@ -4,7 +4,7 @@ Windows 11 Taskbar Styler
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "Width=Auto",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
-  "controlStyles[0].styles[2]": "Margin=250,0,250,0",
+  "controlStyles[0].styles[2]": "Margin=50,0,50,0",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Background:=#1e1e2e",
   "controlStyles[1].styles[1]": "Padding=1",
@@ -20,12 +20,11 @@ Windows 11 Taskbar Styler
   "controlStyles[4].styles[0]": "Margin=0",
   "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[5].styles[0]": "Background:=#1e1e2e",
-  "controlStyles[5].styles[1]": "Margin=8,1,8,3",
-  "controlStyles[5].styles[2]": "CornerRadius=8",
+  "controlStyles[5].styles[1]": "Margin=6,14,6,3",
+  "controlStyles[5].styles[2]": "CornerRadius=6",
   "controlStyles[5].styles[3]": "BorderThickness=1",
   "controlStyles[5].styles[4]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
-  "controlStyles[5].styles[5]": "Padding=2,0,2,0",
-  "controlStyles[5].styles[6]": "Visibility=Collapsed",
+  "controlStyles[5].styles[5]": "Padding=0",
   "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "Padding=0",
   "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
@@ -51,4 +50,4 @@ Windows 11 Taskbar Styler
 
 Taskbar height and icon size
 
-{"IconSize":26,"TaskbarHeight":54,"TaskbarButtonWidth":44}
+{"IconSize":26,"TaskbarHeight":54,"TaskbarButtonWidth":48}
