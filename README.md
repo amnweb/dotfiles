@@ -10,6 +10,11 @@ This repository contains a PowerShell script to automate the installation and co
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/amnweb/dotfiles/main/install.ps1'))
 ```
 
+## Demo
+
+https://github.com/user-attachments/assets/daca3b64-ff05-4fc7-a57d-d1b329bad131
+
+
 ## Notes
 
 Use this script at your own risk. The author is not responsible for any damage or data loss that may occur as a result of using this script.
