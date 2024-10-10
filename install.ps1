@@ -17,8 +17,8 @@ Write-Host " OK" -ForegroundColor Cyan
 $yasbUrl = $yasbReleaseInfo.assets | Where-Object { $_.name -like "*.msi" } | Select-Object -ExpandProperty browser_download_url
 $whkdUrl = $whkdReleaseInfo.assets | Where-Object { $_.name -like "*.msi" } | Select-Object -ExpandProperty browser_download_url
 
-# Define the destination folder as the current location where the script is running
-$destinationFolder = $PSScriptRoot
+# Define the destination folder as the user's temporary directory
+$destinationFolder = [System.IO.Path]::GetTempPath()
 
 # Define the source folder inside the destination folder
 $sourceFolder = Join-Path -Path $destinationFolder -ChildPath "source"
