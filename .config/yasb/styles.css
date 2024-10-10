@@ -1,25 +1,7 @@
-/*
-.widget .label {} -> Global label for all
-.active-window-widget {} -> Styles specific to the active window widget
-.clock-widget {} -> Styles specific to the clock widget
-.cpu-widget {} -> Styles specific to the CPU widget
-.memory-widget {} -> Styles specific to the memory widget
-.weather-widget {} -> Styles specific to the weather widget
-.komorebi-workspaces {} -> Styles specific to komorebi workspaces
-.komorebi-active-layout {} -> Styles specific to komorebi active layout
-.volume-widget {} -> Styles specific to the volume widget 
-.apps-widget {} -> Styles specific to the apps widget
-.power-menu-widget {} -> Styles for the power menu button widget
-.power-menu-popup {} -> Styles for the power menu popup widget
-.power-menu-popup > .button {} -> Styles for power buttons inside the popup 
-.power-menu-popup > .button > .icon,
-.power-menu-popup > .button > .label {} -> Styles for power buttons icons and labels inside the popup 
-.media-widget {} -> Styles specific to the media widget
-*/
 * {
 	font-size: 12px;
-	color: #cdd6f4;
-	font-weight: 500;
+	color: #bec8e7;
+	font-weight: 600;
 	font-family: "JetBrainsMono NFP";
 	margin: 0;
 	padding: 0;
@@ -30,42 +12,40 @@
 }
 .widget {
 	background-color: #1e1e2e;
-	padding: 0 8px;
+	padding: 0 12px;
 	margin: 0;
-
 }
-.widget .label {
-	padding: 1px 2px 1px 2px;
  
+.widget .label {
+	padding: 0px 2px; 
 }
 .widget .label.alt {
-	padding: 1px 8px 1px 8px;
+	padding: 0px 8px;
 }
 .active-window-widget {
-	border-radius: 16px;
+	border-radius: 14px;
 	margin-left: 8px;
 }
-.container-left,
-.container-center,
-.container-right {
-	margin: 0;
-	padding: 0;
-}
-
+ 
+/* .yasb-bar-secondary .active-window-widget {
+    margin-left: 0;
+    border-radius: 0;
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+} */
 .clock-widget {
-	border-top-left-radius: 16px;
-	border-bottom-left-radius: 16px;
+	border-top-left-radius: 14px;
+	border-bottom-left-radius: 14px;
 }
-
 .apps-widget {
-	padding: 0 2px;
-	border-top-right-radius: 16px;
-	border-bottom-right-radius: 16px;
+	padding: 0 4px 0 2px;
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
 }
-.komorebi-workspaces {
-	border-top-right-radius: 16px;
-	border-bottom-right-radius: 16px;
-	padding: 0 2px 0 4px;
+.komorebi-active-layout {
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+	padding: 0 4px 0 0;
 }
 
 .komorebi-active-layout .label {
@@ -74,60 +54,72 @@
 }
 .wifi-widget {
 	padding: 0 4px 0 4px;
-	border-top-left-radius: 16px;
-	border-bottom-left-radius: 16px;
+	border-top-left-radius: 14px;
+	border-bottom-left-radius: 14px;
 }
 
 .apps-widget .widget-container,
 .komorebi-workspaces .widget-container,
 .wifi-widget .widget-container,
-.komorebi-active-layout .widget-container {
+.komorebi-active-layout .widget-container{
 	background-color: #313244;
 	margin: 4px 0 4px 0;
-	border-radius: 14px;
-}
-.komorebi-workspaces .ws-btn {
-	font-size: 16px;
-    background-color: transparent;
-	padding: 0 2px 0 2px;
-	color: #95a0ad;
+	border-radius: 10px;
+    border: 1px solid #424255;
 }
 
+.komorebi-workspaces .widget-container{
+    margin-left:0px;
+}
+.komorebi-workspaces .widget-container {
+    border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+    border-left:none
+}
+.komorebi-workspaces {
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+	padding: 0 4px 0 0;
+}
+.komorebi-workspaces .offline-status {
+    color: #627199;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight:600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: rgba(108, 112, 134, 0);
+	margin:0;
+    font-size: 12px;
+	color:  rgb(132, 134, 189);
+    height: 28px;
+    width: 18px;
+ 
+ 
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: #91b2e7;
+}
 .komorebi-workspaces .ws-btn.populated {
-	color: #74c7ec;
+    color: #89b4fa; 
 }
-.komorebi-workspaces .ws-btn:hover,
-.komorebi-workspaces .ws-btn.populated:hover,
+ 
 .komorebi-workspaces .ws-btn.active {
-	color: #89b4fa;
+	color: rgba(149, 177, 255, 0);
+    background-color: #89b4fa;
+    width: 36px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 5px; 
 }
-/* .komorebi-workspaces .ws-btn {
-	border-radius: 5px;
-	font-size: 10px;
-	width: 10px;
-	height: 10px;
-	margin: 0 4px 0 4px;
-	color: rgba(255, 255, 255, 0);
-	background-color: #9399b2;
-}
-.komorebi-workspaces .ws-btn:hover,
-.komorebi-workspaces .ws-btn.populated:hover {
-	background-color: #fff;
-}
-.komorebi-workspaces .ws-btn.populated {
-	background-color: #89b4fa;
-}
-.komorebi-workspaces .ws-btn.active {
-	background-color: #89b4fa;
-	color: rgba(0, 0, 0, 0);
-	width: 26px;
-} */
 .apps-widget .label {
-	font-size: 14px;
+	font-size: 15px;
 	padding: 0 2px;
+    color: #8191bb;
 }
 .apps-widget .label:hover {
-	color: #fff;
+	color: #a5b8e9;
 }
 
 /*POWER MENU WIDGET*/
@@ -137,57 +129,63 @@
 	margin-bottom: 10px;
 	color: rgba(191, 202, 219, 0.726);
 	font-weight: 600;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ 
 }
 .power-menu-widget .label {
 	color: #f38ba8;
 	font-size: 13px;
 }
 .power-menu-popup {
-	background-color: rgba(24, 24, 37, 0.9);
+	background-color: rgba(24, 24, 37, 0);
 	border-radius: 12px;
-	border: 4px solid rgb(41, 42, 58);
+	 
 }
 .power-menu-popup .button {
 	padding: 0;
-	width: 240px;
-	height: 120px;
+	width: 180px;
+	height: 230px;
 	border-radius: 8px;
-	background-color: rgb(41, 42, 58);
-	font-family: "SegoeUI";
+	background-color: rgba(41, 42, 58, 0.5);
 	color: white;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	margin: 8px;
+	border-left: 4px solid rgba(58, 59, 83, 0);
+    border-right: 4px solid rgba(58, 59, 83, 0);
+    border-top: 8px solid rgba(58, 59, 83, 0);
+    border-bottom: 8px solid rgba(58, 59, 83, 0);
+	margin: 0px;
 }
 .power-menu-popup .button.hover {
-	background-color: rgb(55, 56, 75);
-	border: 1px solid rgb(55, 56, 75);
+	background-color: rgb(41, 42, 58);
+	border-left: 4px solid rgb(41, 42, 58);
+    border-right: 4px solid rgb(41, 42, 58);
+    border-top: 8px solid rgb(41, 42, 58);
+    border-bottom: 8px solid rgb(41, 42, 58);
 }
 .power-menu-popup .button .label {
 	margin-bottom: 8px;
 	font-size: 16px;
-	font-weight: 600;
-	color: rgba(255, 255, 255, 0.95);
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+ 
 }
 .power-menu-popup .button .icon {
-	font-size: 48px;
-	padding-top: 8px;
+	font-size: 64px;
+	padding-top: 32px;
 	color: rgba(255, 255, 255, 0.25);
 }
 .power-menu-popup .button.cancel .icon {
-	color: rgba(243, 139, 168, 0.55);
+    padding: 0;
+    margin: 0;
 }
 .power-menu-popup .button.cancel .label {
 	color: rgba(243, 139, 168, 0.95);
+    margin: 0;
 }
-.power-menu-popup .button.shutdown .icon {
-	color: rgba(137, 180, 250, 0.55);
+ 
+.power-menu-popup .button.cancel {
+    height: 32px;
+    border-radius: 4px;
 }
-.power-menu-popup .button.shutdown .label {
-	color: rgba(137, 180, 250, 0.95);
-}
-
+ 
 /* ICONS */
 .icon {
 	font-size: 16px;
@@ -212,10 +210,7 @@
 }
 
  
-.github-widget {
-    padding:0 8px;
-     
-}
+ 
 .github-widget .icon {
     font-size: 14px;
 	color: #cdd6f4
@@ -227,6 +222,11 @@
  
 
 /* WEATHER WIDGET */
+.weather-widget,
+.github-widget,
+.volume-widget {
+    padding:0 6px;
+}
 .weather-widget .icon {
 	font-size: 16px;
 	margin: 0 2px 0px 0;
@@ -236,11 +236,16 @@
 }
 .weather-widget .icon.clearNight {
 	color: rgb(107, 189, 221);
-	font-size: 20px;
-	margin: 0px 2px 0px 0;
+	font-size: 16px;
+	margin: 0px 2px 1px 0;
 }
-.weather-widget .icon.rainyNight {
-    font-size: 16px;
+.weather-widget .icon.cloudyNight {
+    color: rgb(107, 189, 221);
+    font-size: 18px;
+    margin: 0px 2px 1px 0;
+} 
+.weather-widget .icon.cloudyDay {
+     color: rgb(129, 173, 248);
 }
 /* 
 .weather-widget .icon.cloudyDay {}
@@ -271,23 +276,16 @@
     padding-top: 3px;
 }
 .media-widget .btn {
-	color: #acb2c9;
-	padding: 0 3px;
-	margin: 4px 0;
+	color: #989caa;
+	padding:0 1px;
+	margin: 0;
 	font-family: Segoe Fluent Icons;
+    font-weight: 400;
 }
-.media-widget .label.subtext {
-    color: #bac2de;
-    font-size: 10px;
-    margin-top: -1px;
-}
-
 .media-widget .btn:hover {
 	color: #babfd3;
 }
 .media-widget .btn.play {
-	background-color: #313244;
-	border-radius: 14px;
 	font-size: 16px;
 }
 .media-widget .btn.disabled:hover,
@@ -299,32 +297,55 @@
 
 .ai-widget {
 	padding: 0 4px 0 4px;
-	border-top-left-radius: 16px;
-	border-bottom-left-radius: 16px;
+	border-top-left-radius: 14px;
+	border-bottom-left-radius: 14px;
 }
 .ai-widget .widget-container
  {
+    border: 1px solid #424255;
 	background-color: #313244;
 	margin: 4px 0 4px 0;
-	border-radius: 14px;
+	border-radius: 10px;
 }
- 
- 
 .ai-widget .icon {
 	color: #43d8d8;
-	padding: 0 7px;
-    font-size: 16px;
+	padding: 0 5px;
+    font-size: 14px;
 	margin: 0;
 }
 .ai-widget .icon:hover {
 	color: #70eeee;
 }
 
-
 .taskbar-widget{
-    padding: 0 4px;
-}
-.taskbar-widget .label{
-    padding: 1px 4px 0 4px;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
  
+.taskbar-widget .app-icon{
+    padding:0 6px;
+    border: none;
+    margin: 0;
+}
+.obs-widget  {
+    padding: 0 5px;
+}
+.obs-widget .recording {
+    font-size: 18px;
+    color: #ff3b3b;
+}
+.obs-widget .paused {
+    font-size: 18px;
+    color: #bfc93b;
+}
+.obs-widget .stopped {
+    font-size: 18px;
+    color: #756e70;
+}
+.whkd-widget {
+    padding: 0 6px 0 6px;
+}
+.whkd-widget .icon {
+    font-size: 14px;
+}

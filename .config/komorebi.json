@@ -1,0 +1,179 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 3,
+  "default_container_padding": 3,
+  "focus_follows_mouse": "Komorebi",
+  "mouse_follows_focus": false,
+  "transparency": false,
+  "transparency_alpha": 225,
+  "animation": {
+    "enabled": true,
+    "duration": 200,
+    "style": "EaseInOutExpo",
+    "fps": 60
+  },
+  "border": false,
+  "border_implementation": "Windows",
+  "border_style": "System",
+  "border_width": 0,
+  "border_offset": 0,
+  "border_colours": {
+    "single": "#89b4fa", //#89b4fa
+    "stack": "#a6e3a1",
+    "monocle": "#f38ba8",
+    "unfocused": "#10151D"
+  },
+  "stackbar": {
+    "mode": "Never"
+  },
+  "float_rules": [
+    {
+      "kind": "Exe",
+      "id": "explorer.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Discord.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Rakuten Viber",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Skype",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Telegram.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Settings",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Microsoft Store",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Photoshop.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Adobe Premiere Pro.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Illustrator.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "ApplicationFrameHost.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "vmware.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Class",
+      "id": "MozillaDialogClass",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "yasb.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Notepad.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "BeemTube.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "python3.12.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "yasb.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "LogiAiPromptBuilder.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "monitors": [
+    {
+      "workspaces": [
+        {
+            "name": "1",
+            "layout": "BSP"
+          },
+          {
+            "name": "2",
+            "layout": "BSP"
+          },
+          {
+            "name": "3",
+            "layout": "BSP"
+          },
+          {
+            "name": "4",
+            "layout": "BSP"
+          },
+          {
+            "name": "5",
+            "layout": "BSP"
+          }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "BSP"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        },
+        {
+          "name": "4",
+          "layout": "BSP"
+        },
+        {
+          "name": "5",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}

@@ -38,6 +38,9 @@ home_symbol = '󰋜 ~'
 format = '[$path]($style)[$read_only]($read_only_style) '
 
 [character]
+#success_symbol = "[](bright-purple)"
+#error_symbol = "[](bright-cyan)"
+#vimcmd_symbol = "[](bright-green)"
 success_symbol = "[❯](bright-purple)"
 error_symbol = "[❯](bright-cyan)"
 vimcmd_symbol = "[❯](bright-green)"

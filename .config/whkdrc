@@ -3,13 +3,6 @@
 alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
 alt + shift + o         : komorebic reload-configuration
 
-# App shortcuts - these require shell to be pwsh / powershell
-# The apps will be focused if open, or launched if not open
-alt + f                 : start firefox
-alt + c                 : start "C:\Users\amn\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-alt + t					: start wt
-alt + a					: start arc
-ctrl + q                : komorebic close
 # Focus windows
 ctrl + left             : komorebic focus left
 ctrl + down             : komorebic focus down
@@ -46,7 +39,7 @@ ctrl + shift + f        : komorebic toggle-monocle
 
 # Window manager options
 alt + shift + r         : komorebic retile
-ctrl + shift + p        : komorebic toggle-pause
+#ctrl + shift + p        : komorebic toggle-pause
 
 # Layouts
 ctrl + shift + x        : komorebic flip-layout horizontal
@@ -56,8 +49,9 @@ ctrl + shift + y        : komorebic flip-layout vertical
 alt + 1                 : komorebic focus-workspace 0
 alt + 2                 : komorebic focus-workspace 1
 alt + 3                 : komorebic focus-workspace 2
-
+alt + 4                 : komorebic focus-workspace 3
 # Move windows across workspaces
 alt + shift + 1         : komorebic move-to-workspace 0
 alt + shift + 2         : komorebic move-to-workspace 1
 alt + shift + 3         : komorebic move-to-workspace 2
+alt + shift + 4         : komorebic move-to-workspace 3

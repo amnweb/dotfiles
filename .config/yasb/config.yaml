@@ -1,6 +1,6 @@
 watch_stylesheet: true
 watch_config: true
-debug: false
+debug: true
 # This komorebi setting will be used for tray context menu.
 komorebi:
   start_command: "komorebic start --whkd"
@@ -8,25 +8,27 @@ komorebi:
   reload_command: "komorebic stop --whkd && komorebic start --whkd"
 
 bars:
-  status-bar:
+  primary-bar:
     enabled: true
-    screens: ['*'] 
+    screens: ['DELL P2419H (2)'] 
     class_name: "yasb-bar"
     alignment:
       position: "top"
       center: false
     blur_effect:
-      enabled: false
-      acrylic: false
-      dark: false
+      enabled: false # Blur effect will be applied to the bar
+      acrylic: false # Acrylic effect will be applied to the bar
+      dark_mode: false # Dark mode will also add more shadow to the bar
+      round_corners: false # Default radius from OS
+      border_color: None # If is None border will be removed, System will use OS accent color, otherwise you can set your own HEX color (this option is related to round_corners=true) 
     window_flags:
       always_on_top: false
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 36
+      height: 28
     padding:
-      top: 3
+      top: 2
       left: 0
       bottom: 0
       right: 0
@@ -38,14 +40,56 @@ bars:
         ]
       center: [
          "clock",
-         "apps",
+         "apps"
         ]
       right:
         [
           "ai",
           "media",
           "github",
+          "taskbar",
           "weather",
+          "whkd",
+          "volume",
+          "power_menu"
+        ]
+  secondary-bar:
+    enabled: true
+    screens: ['DELL P2419H (1)'] 
+    class_name: "yasb-bar-secondary"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false # Blur effect will be applied to the bar
+      acrylic: false # Acrylic effect will be applied to the bar
+      dark_mode: false # Dark mode will add more shadow to the bar
+      round_corners: false # Default radius from OS
+      border_color: None 
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 28
+    padding:
+      top: 2
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        [
+          "komorebi_workspaces",
+          "active_window"
+        ]
+      center: [
+         "clock",
+         "apps"
+        ]
+      right:
+        [
+          "ai",
           "volume",
           "power_menu"
         ]
@@ -63,7 +107,6 @@ widgets:
       controls_left: true
       hide_empty: true
       thumbnail_alpha: 250
-      #thumbnail_alpha_multiplier: 0.9
       thumbnail_padding: 8
       thumbnail_corner_radius: 0
       icons:
@@ -72,6 +115,33 @@ widgets:
         play: "\ue768"
         pause: "\ue769"
 
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uf4bc</span> {virtual_mem_outof}"
+      label_alt: "<span>\uf4bc</span> {virtual_mem_percent}%"
+      update_interval: 10000
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]} <span>\uf4bc</span> {info[percent][total]}%"
+      update_interval: 2000
+      histogram_icons:
+        - '\u2581' # 0%
+        - '\u2581' # 10%
+        - '\u2582' # 20%
+        - '\u2583' # 30%
+        - '\u2584' # 40%
+        - '\u2585' # 50%
+        - '\u2586' # 60%
+        - '\u2587' # 70%
+        - '\u2588' # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -79,28 +149,35 @@ widgets:
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
       label_icon: true
-      label_icon_size: 16
+      label_icon_size: 14
       max_length: 56
       max_length_ellipsis: "..."
       monitor_exclusive: true
-
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%d, %b %H:%M}"
-      label_alt: "{%A %d %B %Y, %H:%M}"
+      label: "{%a, %d %b %H:%M}"
+      label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
-
+      callbacks:
+        on_left: "exec notification_center"
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-        label_offline: "Komorebi Offline"
+        label_offline: "\u26a1 Offline"
         label_workspace_btn: "\udb81\udc3d"
-        label_workspace_active_btn: "\udb81\udc3e"
+        label_workspace_active_btn: ""
+        label_workspace_populated_btn: "\udb81\udc3e"
         label_default_name: "{index}"
         label_zero_index: false
         hide_empty_workspaces: false
-        hide_if_offline: true
+        hide_if_offline: false
+        animation: true
+        container_padding:
+          top: 0
+          left: 8
+          bottom: 0
+          right: 8
 
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
@@ -121,6 +198,11 @@ widgets:
         maximised: "MAX"
         floating: "FLOATING"
         paused: "PAUSED"
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
       callbacks:
         on_left: 'next_layout'
         on_middle: 'toggle_monocle'
@@ -131,26 +213,25 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp_c}"
       label_alt: "{location}: Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
-      api_key: '3bf4cf9a7c3f40d6b31174128242807'
+      api_key: '24b6c2cda6d84066b0304531241908'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
-      location: 'London' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      location: 'USA Los Angeles 90006' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
       callbacks:
         on_left: "toggle_label"
       icons: 
-        sunnyDay: "\ue30d"
-        clearNight: "\ue32b"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\ue311"
-        rainyDay: "\udb81\ude7e"
-        rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzard: "\uebaa"
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\udb81\udd94"
+        cloudyDay: "\uebaa"
+        cloudyNight: "\uebaa"
+        rainyDay: "\udb81\udd96"
+        rainyNight: "\udb81\udd96"
+        snowyIcyDay: "\udb81\udd92"
+        snowyIcyNight: "\udb81\udd92"
+        blizzard: "\udb81\udd93"
         default: "\uebaa"
         # https://www.weatherapi.com/docs/
         # Usage {temp_c}, {min_temp_c}, {max_temp_c}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
-
 
   volume:
     type: "yasb.volume.VolumeWidget"
@@ -173,20 +254,23 @@ widgets:
       uptime: True
       blur: False
       blur_background: True
-      animation_duration: 250 # Milisecond 
-      button_row: 3 # Number of buttons in row, min 1 max 5
+      animation_duration: 200 # Milisecond 
+      button_row: 5 # Number of buttons in row, min 1 max 5
       buttons:
-        lock: ["\uea75","Lock"]
-        signout: ["\udb80\udf43","Sign out"]
         shutdown: ["\uf011","Shut Down"]
         restart: ["\uead2","Restart"]
+        signout: ["\udb80\udf43","Sign out"]
         hibernate: ["\uf28e","Hibernate"]
-        cancel: ["\udb81\udf3a","Cancel"]
- 
-
+        sleep: ["\u23fe","Sleep"]
+        cancel: ["","Cancel"]
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
       label: "{data}"
       app_list:
         - {icon: "\uf0a2", launch: "notification_center"}
@@ -194,7 +278,11 @@ widgets:
         - {icon: "\uf422", launch: "search"}
         - {icon: "\ueb03", launch: "cmd /c Taskmgr"}
         - {icon: "\uf489", launch: "wt"}
+        - {icon: "\udb84\udec7", launch: "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"}
         - {icon: "\uf1ff", launch: "C:\\Users\\amn\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe"}
+        - {icon: "\ue217", launch: "C:\\Users\\amn\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"}
+        - {icon: "\ued38", launch: "C:\\Users\\amn\\AppData\\Local\\Viber\\Viber.exe"}
+        - {icon: "\uf17e", launch: "C:\\Program Files (x86)\\Microsoft\\Skype for Desktop\\Skype.exe"}
         - {icon: "\udb80\ude39", launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe"}
         - {icon: "\udb82\ude1e", launch: "C:\\Users\\amn\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"}
  
@@ -203,15 +291,29 @@ widgets:
     options:
       label: "<span>\ueba1</span>"
       label_alt: "Notifications {data}"
-      token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
-      max_notification: 20 # Max number of notification displaying in menu max: 50
-      only_unread: false # Show only unread or all notifications; if you set it to False, all new (unread) will have a white icon.
-      max_field_size: 54 # Max characters in title before truncation.
+      token: env
+      max_notification: 30
+      only_unread: false
+      max_field_size: 54
       menu_width: 400
       menu_height: 400
       menu_offset: 240
-      update_interval: 180 # Check for new notification in seconds
+      update_interval: 60
 
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      animation: true
+      icon_size: 15
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
   ai:
     type: "yasb.custom.CustomWidget"
     options:
@@ -220,3 +322,25 @@ widgets:
       class_name: "ai-widget"
       callbacks:
         on_left: "exec cmd.exe /c start \"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" https://platform.openai.com/playground/chat?models=gpt-4o"
+  tray:
+    type: "yasb.tray.TrayWidget"
+    options:
+      label: "<span>\udb80\uddd8</span>"
+
+  whkd:
+    type: "yasb.whkd.WhkdWidget"
+    options:
+      label: "<span>\uf11c</span>"
+  obs:
+    type: "yasb.obs.ObsWidget"
+    options:  
+      connection:
+        host: "192.168.1.5"
+        port: 4455
+        password: "123456"
+      icons:
+        recording: "\ueba7"
+        stopped: "\ueba5"
+        paused: "\ueba7"
+      hide_when_not_recording: true
+      blinking_icon: true
