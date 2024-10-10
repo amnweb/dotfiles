@@ -69,8 +69,14 @@ Write-Host " OK" -ForegroundColor Blue
 # Copy the .config folder to the user's home directory
 $dotfilesConfPath = Join-Path -Path $dotfilesExtractPath -ChildPath "dotfiles-main\.config"
 $userConfPath = Join-Path -Path $env:USERPROFILE -ChildPath ".config"
+
+# Ensure the .config directory exists
+if (-Not (Test-Path -Path $userConfPath)) {
+    New-Item -ItemType Directory -Path $userConfPath -Force > $null
+}
+
 Write-Host "Copying .config..." -ForegroundColor Blue -NoNewline
-Copy-Item -Path "$dotfilesConfPath\*" -Destination $userConfPath -Recurse -Force > $null
+Copy-Item -Path "$dotfilesConfPath\*" -Destination $userConfPath -Recurse -Force
 Write-Host " OK" -ForegroundColor Blue
 
 # Set the wallpaper to forest_dark_winter.jpg
