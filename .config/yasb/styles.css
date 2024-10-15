@@ -102,12 +102,18 @@
     color: #91b2e7;
 }
 .komorebi-workspaces .ws-btn.populated {
-    color: #89b4fa; 
+    color: rgba(137, 180, 250, 0);
+    width: 10px;
+    height: 10px;
+    background-color: #89adfa;
+    border-radius: 5px;
+    margin: 0 4px;
+    font-size: 1px;
 }
  
 .komorebi-workspaces .ws-btn.active {
 	color: rgba(149, 177, 255, 0);
-    background-color: #89b4fa;
+    background-color: #89adfa;
     width: 36px;
     height: 10px;
     margin: 0 4px;
