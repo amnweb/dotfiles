@@ -11,9 +11,9 @@
   "transparency_alpha": 225,
   "animation": {
     "enabled": true,
-    "duration": 200,
-    "style": "EaseInOutExpo",
-    "fps": 60
+    "duration": 400,
+    "style": "EaseOutBack",
+    "fps": 120
   },
   "border": false,
   "border_implementation": "Windows",
