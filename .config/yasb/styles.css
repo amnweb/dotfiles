@@ -1,6 +1,7 @@
-* {
+@import "colors.css";
+*{
 	font-size: 12px;
-	color: #bec8e7;
+	color: var(--subtext0); /* #bec8e7 */
 	font-weight: 600;
 	font-family: "JetBrainsMono NFP";
 	margin: 0;
@@ -11,7 +12,7 @@
 	margin: 0;
 }
 .widget {
-	background-color: #1e1e2e;
+	background-color: var(--base);
 	padding: 0 12px;
 	margin: 0;
 }
@@ -26,13 +27,6 @@
 	border-radius: 14px;
 	margin-left: 8px;
 }
- 
-/* .yasb-bar-secondary .active-window-widget {
-    margin-left: 0;
-    border-radius: 0;
-	border-top-right-radius: 14px;
-	border-bottom-right-radius: 14px;
-} */
 .clock-widget {
 	border-top-left-radius: 14px;
 	border-bottom-left-radius: 14px;
@@ -62,10 +56,10 @@
 .komorebi-workspaces .widget-container,
 .wifi-widget .widget-container,
 .komorebi-active-layout .widget-container{
-	background-color: #313244;
+	background-color: var(--surface0);
 	margin: 4px 0 4px 0;
 	border-radius: 10px;
-    border: 1px solid #424255;
+    border: 1px solid var(--surface1)
 }
 
 .komorebi-workspaces .widget-container{
@@ -89,31 +83,28 @@
 }
 .komorebi-workspaces .ws-btn {
     border: none;
-    background-color: rgba(108, 112, 134, 0);
+    background-color:transparent;
 	margin:0;
     font-size: 12px;
-	color:  rgb(132, 134, 189);
+	color:  var(--overlay1);
     height: 28px;
     width: 18px;
- 
- 
 }
 .komorebi-workspaces .ws-btn:hover {
-    color: #91b2e7;
+    color: var(--overlay2);
 }
 .komorebi-workspaces .ws-btn.populated {
-    color: rgba(137, 180, 250, 0);
+    color:transparent;
     width: 10px;
     height: 10px;
-    background-color: #89adfa;
+    background-color: var(--blue);
     border-radius: 5px;
     margin: 0 4px;
     font-size: 1px;
 }
- 
 .komorebi-workspaces .ws-btn.active {
-	color: rgba(149, 177, 255, 0);
-    background-color: #89adfa;
+	color: transparent;
+    background-color: var(--blue);
     width: 36px;
     height: 10px;
     margin: 0 4px;
@@ -122,10 +113,10 @@
 .apps-widget .label {
 	font-size: 15px;
 	padding: 0 2px;
-    color: #8191bb;
+    color: var(--overlay2);
 }
 .apps-widget .label:hover {
-	color: #a5b8e9;
+	color: var(--subtext1);
 }
 
 /*POWER MENU WIDGET*/
