@@ -15,7 +15,7 @@ Write-Host " OK" -ForegroundColor Cyan
 
 # Extract the download URLs for the MSI files
 $yasbUrl = $yasbReleaseInfo.assets | Where-Object { $_.name -like "*.msi" } | Select-Object -ExpandProperty browser_download_url
-$whkdUrl = $whkdReleaseInfo.assets | Where-Object { $_.name -like "*.msi" } | Select-Object -ExpandProperty browser_download_url
+$whkdUrl = $whkdReleaseInfo.assets | Where-Object { $_.name -like "*x86_64.msi" } | Select-Object -ExpandProperty browser_download_url
 
 # Define the destination folder as the user's temporary directory
 $destinationFolder = [System.IO.Path]::GetTempPath()
