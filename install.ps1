@@ -60,8 +60,8 @@ Expand-Archive -Path $dotfilesZipPath -DestinationPath $dotfilesExtractPath -For
 Write-Host " OK" -ForegroundColor Magenta
 
 # Copy all files from dotfiles/Pictures to the user's Pictures folder
-$dotfilesPicturesPath = Join-Path -Path $dotfilesExtractPath -ChildPath "dotfiles-main\Pictures"
-$userPicturesPath = Join-Path -Path $env:USERPROFILE -ChildPath "Pictures"
+$dotfilesPicturesPath = Join-Path -Path $dotfilesExtractPath -ChildPath "dotfiles-main\Pictures\Wallpapers"
+$userPicturesPath = Join-Path -Path $env:USERPROFILE -ChildPath "Pictures\Wallpapers"
 Write-Host "Copying pictures..." -ForegroundColor Blue -NoNewline
 Copy-Item -Path "$dotfilesPicturesPath\*" -Destination $userPicturesPath -Recurse -Force
 Write-Host " OK" -ForegroundColor Blue
