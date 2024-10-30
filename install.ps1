@@ -63,7 +63,7 @@ Write-Host " OK" -ForegroundColor Magenta
 $dotfilesPicturesPath = Join-Path -Path $dotfilesExtractPath -ChildPath "dotfiles-main\Pictures\Wallpapers"
 $userPicturesPath = Join-Path -Path $env:USERPROFILE -ChildPath "Pictures\Wallpapers"
 if (-Not (Test-Path -Path $userPicturesPath)) {
-    New-Item -ItemType Directory -Path $userPicturesPath -Force
+    New-Item -ItemType Directory -Path $userPicturesPath -Force > $null
 }
 Write-Host "Copying pictures..." -ForegroundColor Blue -NoNewline
 Copy-Item -Path "$dotfilesPicturesPath\*" -Destination $userPicturesPath -Recurse -Force
