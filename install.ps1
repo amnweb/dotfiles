@@ -97,7 +97,7 @@ if (Test-Path $wallpaperPath) {
     $null = [Wallpaper]::SystemParametersInfo(0x0014, 0, $wallpaperPath, 0x0001)
     Write-Host " OK" -ForegroundColor Green
 } else {
-    Write-Host "Wallpaper forest_dark_winter.jpg not found in Pictures folder" -ForegroundColor Red
+    Write-Host "Wallpaper forest_dark_winter.jpg not found" -ForegroundColor Red
 }
 
 # Close the yasb.exe process if it is running
