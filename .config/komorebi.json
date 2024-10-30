@@ -126,6 +126,7 @@
       "matching_strategy": "Equals"
     }
   ],
+  
   "monitors": [
     {
       "workspaces": [
@@ -136,6 +137,7 @@
           {
             "name": "2",
             "layout": "BSP"
+
           },
           {
             "name": "3",
@@ -168,6 +170,7 @@
         {
           "name": "4",
           "layout": "BSP"
+
         },
         {
           "name": "5",
