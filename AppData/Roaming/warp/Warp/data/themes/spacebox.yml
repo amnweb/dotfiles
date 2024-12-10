@@ -1,0 +1,25 @@
+name: SpaceBox
+accent: '#1671da'
+cursor: '#5EA2FF'
+background: '#10151D'
+details: darker
+foreground: '#B6B8D1'
+terminal_colors:
+  bright:
+    black: '#666666'
+    blue: '#5C78FF'
+    cyan: '#5ac8ff'
+    green: '#9891FF'
+    magenta: '#5EA2FF'
+    red: '#DE72FF'
+    white: '#ffffff'
+    yellow: '#A3A0FF'
+  normal:
+    black: '#000D1C'
+    blue: '#2B4FFF'
+    cyan: '#28B9FF'
+    green: '#8E76FF'
+    magenta: '#2883FF'
+    red: '#EF56FF'
+    white: '#f1f1f1'
+    yellow: '#8069FF'
