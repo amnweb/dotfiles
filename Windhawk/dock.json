@@ -1,0 +1,22 @@
+{
+  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].styles[0]": "Width=Auto",
+  "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
+  "controlStyles[0].styles[2]": "Margin=0,0,0,0",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"#11111bbf\" FallbackColor=\"#11111bbf\" TintOpacity=\"1\" TintLuminosityOpacity=\"0\" Opacity=\"1\"/>",
+  "controlStyles[1].styles[1]": "Padding=1",
+  "controlStyles[1].styles[2]": "CornerRadius=10",
+  "controlStyles[1].styles[3]": "Padding=2,0,2,0",
+  "controlStyles[1].styles[4]": "Margin=0,2,0,8",
+  "controlStyles[1].styles[5]": "BorderThickness=1",
+  "controlStyles[1].styles[6]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
+  "controlStyles[2].target": "Rectangle#BackgroundStroke",
+  "controlStyles[2].styles[0]": "Visibility=Collapsed",
+  "controlStyles[3].target": "Rectangle#BackgroundStroke",
+  "controlStyles[3].styles[0]": "Visibility=Collapsed",
+  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[4].styles[0]": "Margin=0",
+  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[5].styles[0]": "Visibility=Collapsed"
+}
