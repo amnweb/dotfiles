@@ -1,0 +1,43 @@
+{
+  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].styles[0]": "Width=Auto",
+  "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
+  "controlStyles[0].styles[2]": "Margin=0,0,0,0",
+
+  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.5\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
+  "controlStyles[1].styles[1]": "Padding=4,2,4,2",
+  "controlStyles[1].styles[2]": "CornerRadius=14",
+  "controlStyles[1].styles[3]": "BorderThickness=1",
+  "controlStyles[1].styles[4]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
+  "controlStyles[1].styles[5]": "Margin=0,0,0,4",
+  "controlStyles[2].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
+  "controlStyles[2].styles[0]": "Visibility=Collapsed",
+
+  "controlStyles[3].target": "SystemTray.SystemTrayFrame",
+  "controlStyles[3].styles[0]": "Visibility=Collapsed",
+  
+  "controlStyles[4].target": "Rectangle#BackgroundStroke",
+  "controlStyles[4].styles[0]": "Visibility=Collapsed",
+
+  "controlStyles[5].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[5].styles[0]": "Margin=0",
+
+  "controlStyles[6].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[6].styles[0]": "Visibility=Collapsed",
+  
+  "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
+  "controlStyles[7].styles[0]": "Background@Fill=Transparent",
+  "controlStyles[7].styles[1]": "CornerRadius=8",
+  "controlStyles[8].target": "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[8].styles[0]": "Background@Fill=Transparent",
+  "controlStyles[8].styles[1]": "CornerRadius=8",
+  "controlStyles[9].target": "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[9].styles[0]": "Background@Fill=Transparent",
+  "controlStyles[9].styles[1]": "CornerRadius=8",
+  "controlStyles[10].target": "Windows.UI.Xaml.Controls.Image#OverlayIcon",
+  "controlStyles[10].styles[0]": "Margin=0,6,8,0",
+
+  "controlStyles[11].target": "Windows.UI.Xaml.Controls.Border#MultiWindowElement",
+  "controlStyles[11].styles[0]": "CornerRadius=8" 
+}
